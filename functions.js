@@ -6,6 +6,8 @@
  */
 function greet(name) {
   // Your code here
+  console.log("Hello");
+  console.log(`Hello ${name}`);
 }
 
 /**
@@ -15,6 +17,11 @@ function greet(name) {
  */
 function isOdd(n) {
   // Your code here
+  if (n % 2 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -30,6 +37,10 @@ function isOdd(n) {
  */
 function oddsSmallerThan(n) {
   // Your code here
+  var result = 0;
+  result = Math.floor(n / 2);
+  return result;
+
 }
 
 /**
@@ -44,6 +55,11 @@ function oddsSmallerThan(n) {
  */
 function squareOrDouble(n) {
   // Your code here
+  if (n % 2 !== 0) {
+    return Math.pow(n, 2);
+  } else {
+    return n * 2;
+  }
 }
 
 /**
@@ -64,8 +80,13 @@ function squareOrDouble(n) {
  */
 function ageFromBirthDate(birthDate) {
   const _MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365;
-
-  // Your code here
+  let today = new Date();
+  let year = birthDate.slice(0, 4);
+  let month = birthDate.slice(4, 6);
+  let day = birthDate.slice(6);
+  let birth = new Date(year + "-" + month + "-" + day);
+  let result = today - birth;
+  return Math.floor(result / _MS_PER_YEAR);
 }
 
 module.exports = {
